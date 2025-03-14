@@ -4,7 +4,7 @@ import time
 import random
 
 # Provide your URL here
-url = 'https://www.amazon.in/s?k=laptop'
+url = 'https://www.shopclues.com/mobiles-and-tablets.html?facet_brand%5b%5d=Apple&fsrc=facet_brand'
 
 # Custom User-Agent to mimic a regular browser
 user_agents = [
@@ -44,12 +44,13 @@ def mainWebScraping():
         soup = BeautifulSoup(content, 'html.parser')
 
         # Create a new .html file and write the parsed content
-        with open(f'pages/{file_name}', 'w', encoding='utf-8') as file:
+        with open(f'{file_name}', 'w', encoding='utf-8') as file:
             file.write(soup.prettify())  # You can use .prettify() for formatted HTML
 
-        print(f"HTML content successfully saved as '{file_name}'")
+        return(f"HTML content successfully saved as '{file_name}'")
     else:
-        print("Failed to retrieve the page after several attempts.")
+        return("Failed to retrieve the page after several attempts.")
 
 # Call the function to start scraping
 
+# mainWebScraping()
