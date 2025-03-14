@@ -4,8 +4,10 @@ import time
 import random
 
 # Provide your URL here
-url = 'https://www.shopclues.com/mobiles-and-tablets.html?facet_brand%5b%5d=Apple&fsrc=facet_brand'
-
+url = 'https://www.amazon.in/s?k=saree'
+# url = 'https://www.shopclues.com/mobiles-and-tablets.html?facet_brand%5b%5d=Apple&fsrc=facet_brand'
+# ❤️url = 'https://www.snapdeal.com/search?clickSrc=top_searches&keyword=saree&sort=rlvncy'
+# ❤️url = 'https://www.flipkart.com/sarees-store'
 # Custom User-Agent to mimic a regular browser
 user_agents = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -13,7 +15,7 @@ user_agents = [
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'
 ]
 
-file_name = "sw.html"
+file_name = "sw_1.html"
 
 # Function to handle retries
 def fetch_url(url, retries=5, delay=5):
