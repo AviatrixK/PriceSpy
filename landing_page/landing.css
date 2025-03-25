@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Geologica:wght@100..900&family=Goldman:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-color:#0E1A1F;
+    --text-color:#FFFFFF;
+    --primary-color:#00C1FF;
+}
+
+body{
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.582);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    height: 9vh;
+}
+
+nav ul{
+    padding: 0 20px;
+    height: 9vh ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+#logo{
+    font-family: "Goldman", sans-serif;
+    font-size: 2em;
+    text-shadow: 0px 0px 5px rgb(173 234 255 / 45%);
+}
+
+#logo a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#sign-in{
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 7px;
+    outline: none;
+    width: 75px;
+    font-size: 1.1em;
+    padding: 3px;
+    background-color: var(--primary-color);
+    font-family: "Alexandria", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#sign-in:hover{
+    box-shadow: 0px 0px 8px 1px rgb(0 137 255 / 85%);
+}
+#sign-in:active{
+    transform: scale(0.95);
+}
+
+#hero{
+    padding: 0 15px;
+    background-image: url(/assets/bg_img/Hero1.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    background-color: transparent;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero_img img{
+    margin: 10vh 0 0 8vw;
+}
+
+.hero_txt{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 10px 10px 35px 10px;
+    font-family: "Geologica", sans-serif;
+    color: #A7A7A7;
+}
+
+.blue{
+    color: var(--primary-color);
+}
+
+.head_h{
+    width: 604px;
+    font-style: italic;
+    font-weight: 800;
+    color: var(--text-color);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    font-size: 2.5em;
+}
+
+.para_h {
+    width: 574px;
+    font-size: 1.9em;
+}
+
+#getstart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    background-color: transparent;
+    font-family: "Alexandria", sans-serif;
+    cursor: pointer;
+    color: var(--primary-color);
+    text-align: left;
+    font-size: 1.5em;
+    width: 242px;
+    height: 62px;
+    padding: 0px 3px 0px 19px;
+    transition: all 0.5s ease-in-out;
+}
+
+#arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+#getstart:hover #arrow {
+    transform: rotate(-30deg);
+    transition: transform 0.3s ease-in-out;
+}
+#getstart:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#cards{
+    background-image: url(/assets/bg_img/Star.png);
+    background-repeat: no-repeat;
+    background-position: calc(-265px) center;
+    background-size: auto 100%;
+    padding: 10px 15px;
+    height: 100vh;
+    font-family: "Geologica", sans-serif;
+}
+
+.c-txt{
+    margin-bottom: 20px;
+}
+.c-head{
+    font-size: 3em;
+    color: var(--text-color);
+    font-style: italic;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+.tri-cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-one{
+    background-color: rgba(0, 0, 0, 0.055);
+    height: 470px;
+    width: 372px;
+    border-radius: 20px;
+}
+.card-two{
+    background-color: rgba(0, 0, 0, 0.055);
+    height: 470px;
+    width: 372px;
+    border-radius: 20px;
+}
+.card-three{
+    background-color: rgba(0, 0, 0, 0.055);
+    height: 470px;
+    width: 372px;
+    border-radius: 20px;
+}
