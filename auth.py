@@ -5,11 +5,17 @@ import time
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
+from flask import render_template
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
+
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return render_template('index.html') #change the name of the "index.html as per the name guven by frontend to authentication page
 
 # 1 Flask-Mail Configuration- providing the details we're using to send the gmail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # SMTP Server
