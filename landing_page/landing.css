@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=DM+Serif+Display:ital@0;1&family=Geologica:wght@100..900&family=Goldman:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+:root {
+  --bg-color: #0e1a1f;
+  --white-color: #ffffff;
+  --primary-color: #00c1ff;
+  --card-two-border: #851dca;
+  --card-three-border: #adebff;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+body {
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.669);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  z-index: 10;
+}
+
+nav ul {
+  padding: 0 20px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+#logo {
+  font-family: "Goldman", sans-serif;
+  font-size: 2em;
+  text-shadow: 0px 0px 5px rgb(173 234 255 / 45%);
+}
+
+#logo a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#sign-in {
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  width: 75px;
+  font-size: 1.1em;
+  padding: 3px;
+  background-color: var(--primary-color);
+  font-family: "Alexandria", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#sign-in:hover {
+  box-shadow: 0px 0px 8px 1px rgb(0 137 255 / 85%);
+}
+
+#sign-in:active {
+  transform: scale(0.95);
+}
+
+#hero {
+  padding: 0 clamp(20px, 5vw, 50px);
+  background-image: url(/assets/bg_img/Hero1.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero_img img {
+  width: clamp(400px, 36vw, 40vw);
+  margin: 10vh 0 0 8vw;
+}
+
+.hero_txt {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 10px 10px 35px 10px;
+  font-family: "Geologica", sans-serif;
+  color: #a7a7a7;
+}
+
+.blue {
+  color: var(--primary-color);
+}
+
+.head_h {
+  width: 604px;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--white-color);
+  text-shadow: 0px 0px 5px #00c1ff50;
+  font-size: 2.5em;
+}
+
+.para_h {
+  width: 574px;
+  font-size: 1.9em;
+}
+
+#getstart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  background-color: transparent;
+  font-family: "Alexandria", sans-serif;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-align: left;
+  font-size: 1.5em;
+  width: 242px;
+  height: 62px;
+  padding: 0px 3px 0px 19px;
+  transition: all 0.5s ease-in-out;
+}
+
+#arrow {
+  transition: transform 0.3s ease-in-out;
+}
+
+#getstart:hover #arrow {
+  transform: rotate(-30deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+#getstart:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#cards {
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 10px 15px;
+  height: 100vh;
+  font-family: "Geologica", sans-serif;
+  /* position:relative; */
+}
+
+#bstr {
+  position: absolute;
+  z-index: -1;
+  left: -333px;
+}
+
+.c-txt {
+  margin-bottom: 20px;
+}
+
+.c-head {
+  font-size: 3em;
+  color: var(--white-color);
+  font-style: italic;
+  text-shadow: 0px 0px 5px #00c1ff50;
+}
+
+.tri-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: "DM Serif Display", serif;
+}
+
+.card-one {
+  background-color: rgba(0, 0, 0, 0.158);
+  backdrop-filter: blur(15px);
+  height: 425px;
+  width: 372px;
+  border-radius: 30px;
+  position: relative;
+  padding: 30px 10px;
+}
+
+.card-one .c-1 {
+  color: var(--white-color);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.7em;
+}
+
+.c-bottom {
+  color: var(--white-color);
+  text-align: right;
+  font-weight: 500;
+  font-size: 2.5em;
+  margin: 10px 25px 0px 0px;
+}
+
+.card-one img {
+  margin-left: 12px;
+}
+
+.card-one::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    var(--primary-color),
+    rgba(70, 70, 116, 0),
+    rgba(70, 70, 116, 0)
+  );
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.card-two {
+  background-color: rgba(0, 0, 0, 0.158);
+  backdrop-filter: blur(15px);
+  height: 425px;
+  width: 372px;
+  border-radius: 30px;
+  position: relative;
+  padding: 30px 10px;
+}
+
+.card-two .c-2 {
+  color: var(--white-color);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.7em;
+}
+
+.adjust {
+  margin-left: 40px;
+  width: 18em;
+}
+
+.card-two img {
+  margin-left: 12px;
+}
+
+.card-two::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    var(--card-two-border),
+    rgba(70, 70, 116, 0),
+    rgba(70, 70, 116, 0)
+  );
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.card-three {
+  background-color: rgba(0, 0, 0, 0.158);
+  backdrop-filter: blur(15px);
+  height: 425px;
+  width: 372px;
+  border-radius: 30px;
+  position: relative;
+  padding: 30px 10px;
+}
+
+.card-three img {
+  margin-left: 15px;
+}
+
+.card-three .c-3 {
+  color: var(--white-color);
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.7em;
+}
+
+.card-three::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    var(--card-three-border),
+    rgba(70, 70, 116, 0),
+    rgba(70, 70, 116, 0)
+  );
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+#stm {
+  background-image: url(/assets/bg_img/Polygon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right 0;
+  padding: 10px 15px;
+  height: 130vh;
+  margin-top: 40px;
+  font-family: "Geologica", sans-serif;
+}
+
+.sbsn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  height: 85vh;
+  overflow: auto;
+  flex-direction: row;
+  font-family: "DM Serif Display", serif;
+}
+
+.lst {
+  color: var(--white-color);
+  font-size: 3em;
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: 0px 0px 5px #00c1ff50;
+}
+
+.sbsn div {
+  width: clamp(31.5vw, 44vw, 50vw);
+  height: clamp(26vh, 28vh, 35vh);
+  margin: 24px;
+  border: 2px solid transparent;
+}
+
+.lst-bx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 65px;
+  transition: all 0.5s ease-in-out;
+}
+
+#lst-1:hover {
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  background-color: #00bfff21;
+}
+
+#lst-2:hover {
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  background-color: #00bfff21;
+}
+
+#lst-2 {
+  gap: 30px;
+}
+
+#lst-3:hover {
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  background-color: #00bfff21;
+}
+
+#lst-3 {
+  gap: 30px;
+}
+
+#lst-4:hover {
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  backdrop-filter: blur(20px);
+  background-color: #003b4e48;
+}
+
+#lst-4 {
+  gap: 30px;
+}
+
+.bottom {
+  color: var(--white-color);
+  width: 50%;
+  margin: auto;
+  text-shadow: 0px 0px 5px #00c1ff50;
+  a {
+    text-decoration: none;
+  }
+}
+
+.bottom h2 {
+  font-family: "Geologica", sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.m-30 {
+  margin-bottom: 30px;
+}
+
+footer {
+  background-image: url(/assets/bg_img/FooterBg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.774);
+  font-family: "Geologica", sans-serif;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff8c;
+    font-size: 1em;
+    font-weight: 200;
+  }
+}
