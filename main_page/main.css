@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=DM+Serif+Display:ital@0;1&family=Geologica:wght@100..900&family=Goldman:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0e1a1f;
+  --white-color: #ffffff;
+  --primary-color: #00c1ff;
+  --card-color:#bdbdc1;
+}
+
+::selection{
+  background-color: var(--primary-color);
+  color: black;
+}
+
+body {
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 30px;
+  z-index: 10;
+}
+
+nav ul {
+  padding: 0 20px;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+ul li {
+  list-style: none;
+  a {
+    text-decoration: none;
+    color: var(--white-color);
+  }
+  font-family: "Geologica", sans-serif;
+}
+
+#logo {
+  margin-right: auto;
+  font-family: "Goldman", sans-serif;
+  font-size: 2em;
+  text-shadow: 0px 0px 5px rgb(173 234 255 / 45%);
+}
+#logo a {
+  color: var(--primary-color);
+}
+
+.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+#sign-in {
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  width: 75px;
+  font-size: 1.1em;
+  padding: 3px;
+  background-color: var(--primary-color);
+  font-family: "Alexandria", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#sign-in:hover {
+  box-shadow: 0px 0px 8px 1px rgb(0 137 255 / 85%);
+}
+
+#sign-in:active {
+  transform: scale(0.95);
+}
+
+main {
+  padding-top: 150px;
+}
+
+.bg-blend {
+  position: absolute;
+  inset: 0;
+  background-image: url(/assets/bg_img/Nav_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  mix-blend-mode: color;
+  z-index: -1;
+}
+
+#search-section {
+  display: flex;
+  justify-content: center;
+  padding: 0 50px;
+  select {
+    padding: 5px;
+    cursor: pointer;
+    font-size: medium;
+    width: clamp(45px, 60px, 60px);
+    border: none;
+    border-right: 2px solid grey;
+    outline: none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+  }
+  input {
+    padding: 15px;
+    width: clamp(280px, 90%, 904px);
+    height: clamp(50px, 6vw, 60px);
+    border: none;
+    outline: none;
+    font-family: "Geologica", sans-serif;
+    font-size: 1.2rem;
+    box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+  }
+  #search{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+    width: clamp(45px, 60px, 60px);
+    height: clamp(50px, 6vw, 60px);
+  img {
+    padding: 10px;
+    width: clamp(45px, 60px, 60px);
+    height: clamp(50px, 6vw, 57px);
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--white-color);
+  }
+}
+}
+
+#head {
+  margin-top: 69px;
+  display: flex;
+  align-items: center;
+  gap: 50vw;
+  padding: 0 50px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  font-family: "Geologica", sans-serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--white-color);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+#prod_cards{
+  background-image: url(/assets/bg_img/Star_3.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 92px 125px;
+  padding: 0 min(5vw, 50px);
+  margin-top: 30px;
+}
+.card{
+  background-color: var(--card-color);
+  width: clamp(250px, 80%, 331px);
+  height: clamp(300px, 50vw, 400px);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+  transition: all 0.1s ease-in-out;
+}
+
+.card:hover{
+  box-shadow: 5px 4px 0px 5px rgb(0, 0, 0);
+}
