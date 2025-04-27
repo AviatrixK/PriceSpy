@@ -66,9 +66,7 @@ def extractShopclues(soup) :
             prod_list.append(all_info)
     jsondata = json.dumps(prod_list,indent=4)
     # print(prod_list)
-    return jsondata 
-
-
+    return jsondata
 
 
 def extractSnapdeal(soup):    

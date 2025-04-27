@@ -10,7 +10,6 @@
     content="low prices, best deals, price comparison, affordable price, discount finder, online shopping, best offers, save money, product prices, price tracker" />
   <title>PriceSpy - Shop Smarter</title>
   <link rel="stylesheet" href="landing.css" />
-  <link rel="stylesheet" href="nav.css" />
 </head>
 
 <body>
@@ -20,6 +19,24 @@
       <li><button id="sign-in">Sign in</button></li>
     </ul>
   </nav>
+  <div class="sign-in-card hide">
+    <h1 class="blue">Welcome,</h1>
+    <h2>sign in to continue</h2>
+    <button id="google_auth"><img width="70px" src="/frontend/assets/img/Google.svg" alt="Google"> Continue with google</button>
+    <center><span>OR</span></center>
+    <div class="emlid">
+      <img width="35px" src="/frontend/assets/svg/person.svg">
+      <input type="email" id="email" placeholder="Email" required>
+    </div>
+    <button disabled id="send_otp" class="disabled">Send OTP</button>
+    <div class="otp">
+      <img width="35px" src="/frontend/assets/svg/lock.svg">
+      <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
+    </div>
+    <button disabled id="verify" class="disabled">Verify <img src="/frontend/assets/svg/Arrow_Fwd.svg"></button>
+    <p id="auth_message"></p>
+  </div>
+  <div class="ovrly_s hide"></div>
   <main id="hero">
     <div class="hero_txt">
       <h1 class="head_h">
@@ -33,16 +50,16 @@
       </p>
       <div class="start-btn">
         <button id="getstart">
-          Get Started <img id="arrow" src="/assets/svg/Arrow.svg" />
+          Get Started <img id="arrow" src="/frontend/assets/svg/Arrow.svg" />
         </button>
       </div>
     </div>
     <div class="hero_img">
-      <img width="500px" src="/assets/img/HeroMain.png" alt="People searching for great deals" />
+      <img width="500px" src="/frontend/assets/img/HeroMain.png" alt="People searching for great deals" />
     </div>
   </main>
   <section id="cards">
-    <img id="bstr" src="/assets/bg_img/Star.png" alt="star" />
+    <img id="bstr" src="/frontend/assets/bg_img/Star.png" alt="star" />
     <div class="c-txt">
       <h1 class="c-head">
         Your ultimate One-Stop Solution for
@@ -54,7 +71,7 @@
         <h2 class="c-1">
           Instant Price Comparison Across Multiple Platforms
         </h2>
-        <img src="/assets/img/compr_card1.png" alt="people checking websites for good deals" />
+        <img src="/frontend/assets/img/compr_card1.png" alt="people checking websites for good deals" />
         <h2 class="c-bottom">01</h2>
       </div>
       <div class="card-two">
@@ -63,14 +80,14 @@
             Effortless Access to the Best Deals in One Click
           </h2>
         </div>
-        <img src="/assets/img/one_click 1_card2.png" alt="Person accessing the site in just one click" />
+        <img src="/frontend/assets/img/one_click 1_card2.png" alt="Person accessing the site in just one click" />
         <h2 class="c-bottom">02</h2>
       </div>
       <div class="card-three">
         <h2 class="c-3">
           Designed for an Intuitive and Hassle-Free Experience
         </h2>
-        <img src="/assets/img/ui1_card3.png"
+        <img src="/frontend/assets/img/ui1_card3.png"
           alt="Showing a good ui which is also responsive making it user efficient" />
         <h2 class="c-bottom">03</h2>
       </div>
@@ -84,19 +101,19 @@
     </h1>
     <div class="sbsn">
       <div class="lst-bx" id="lst-1">
-        <img src="/assets/img/sand_clk.png" alt="Sand Clock" />
+        <img src="/frontend/assets/img/sand_clk.png" alt="Sand Clock" />
         <h2 class="lst">Saves your Time</h2>
       </div>
       <div class="lst-bx" id="lst-2">
-        <img src="/assets/img/Que_spy.png" alt="Question Mark" />
+        <img src="/frontend/assets/img/Que_spy.png" alt="Question Mark" />
         <h2 class="lst">Buy Without Doubts</h2>
       </div>
       <div class="lst-bx" id="lst-3">
-        <img src="/assets/img/money_spy.png" alt="Money" />
+        <img src="/frontend/assets/img/money_spy.png" alt="Money" />
         <h2 class="lst">Save More Than Others</h2>
       </div>
       <div class="lst-bx" id="lst-4">
-        <img src="/assets/img/Notify_spy.png" alt="Notification Bell" />
+        <img src="/frontend/assets/img/Notify_spy.png" alt="Notification Bell" />
         <h2 class="lst">Never Miss Your Favourite Deals</h2>
       </div>
     </div>
@@ -107,7 +124,7 @@
         <div class="start-btn">
           <a href="/main_page/index.html"><button id="getstart">
               Get Started
-              <img id="arrow" src="/assets/svg/Arrow.svg" /></button></a>
+              <img id="arrow" src="/frontend/assets/svg/Arrow.svg" /></button></a>
         </div>
       </center>
     </div>
