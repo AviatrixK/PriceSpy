@@ -442,3 +442,24 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+
+#onsite{
+  font-family: "Geologica", sans-serif;
+  margin: auto;
+  background-color: var(--primary-color);
+  display: flex;
+  height: 8%;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  font-size: large;
+  font-weight: 600;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#onsite:active{
+  background-color: #0291c0;
+}
