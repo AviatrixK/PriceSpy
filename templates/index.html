@@ -49,9 +49,9 @@
         <option value="#">A</option>
         <option value="#">A</option>
       </select>
-      <input type="text" autocomplete="off" autocorrect="off" aria-autocomplete="list"
+      <input type="text" id = "searchFeild" class = "searchFeild" autocomplete="off" autocorrect="off" aria-autocomplete="list"
         placeholder="Search anything in your mind..." />
-      <button id="search">
+      <button id="search" onclick="searchTerm()">
         <img src="{{ url_for('static', filename='images/svg/search.svg')}}" alt="Search" />
       </button>
     </section>
@@ -75,6 +75,7 @@
       </div>
     </section>
   </main>
+  <!-- <div id="products"></div> -->
   <section id="prod_cards">
     <div class="card">
       <div class="product_img">
@@ -153,48 +154,82 @@
   </section>
   <script src="{{ url_for('static', filename='main.js') }}"></script>
   <script>
-    function sendOTP() {
-        let email = document.getElementById("email").value;
+    function searchTerm() {
+        let searchQ = document.getElementById("searchFeild").value;
 
-        fetch("/send-otp", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email })
-        })
-        .then(response => {
-            if (response.ok) {
-                document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
-                document.getElementById("verify-otp").style.display = "block";
-            } else {
-                document.getElementById("otp-message").innerText = "Failed to send OTP.";
-            }
-        })
-        .catch(error => console.log(error));
-    }
+    //     fetch("/amzn?searchQuery="+searchQ, {
+    //         method: "GET",
+    //         headers: { "Content-Type": "application/json" },
+    //         // body: JSON.stringify({ searchQuery : searchQ })
+    //     })
+    //     .then(response => {
+    //         // if (response.ok) {
+    //         //     document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
+    //         //     document.getElementById("verify-otp").style.display = "block";
+    //         // } else {
+    //         //     document.getElementById("otp-message").innerText = "Failed to send OTP.";
+    //         // }
+    //         console.log("Response")
+    //         console.log(response)
+    //     })
+    //     .catch(error => console.log(error));
+    // }
+    fetch("/amzn?searchQuery=" + searchQ, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" }
+})
+.then(response => response.json())
+.then(result => {
+    console.log("Full parsed result:", result);
 
-    function verifyOTP() {
-        let email = document.getElementById("email").value;
-        let otp = document.getElementById("otp").value;
+    const shopCluesData = JSON.parse(result.data.shopClues); // <-- important: parse it
+    const snapDealData = JSON.parse(result.data.snapDeal);   // <-- important: parse it
 
-        fetch("/verify-otp", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, otp: otp })
-        })
-        .then(response => {
-            if (response.status === 200) {
-                document.getElementById("auth_message").innerText = "OTP Verified Successfully!";
-            } else if (response.status === 401) {
-                document.getElementById("auth_message").innerText = "Invalid OTP. Try again.";
-            } else if (response.status === 410) {
-                document.getElementById("auth_message").innerText = "OTP Expired. Request a new one.";
-            } else {
-                document.getElementById("auth_message").innerText = "Error verifying OTP.";
-            }
-        })
-        .catch(error => console.log(error));
-    }
+    console.log("shopClues products:", shopCluesData);
+    console.log("snapDeal products:", snapDealData);
+    document.getElementById("prod_cards").innerHTML = "";
+
+    // Now you can loop and create cards for each product
+    shopCluesData.forEach(product => {
+        createProductCard(product);
+    });
+
+    snapDealData.forEach(product => {
+        createProductCard(product);
+    });
+
+})
+.catch(error => {
+    console.error("Error fetching data:", error);
+});
+
+}
+
+function createProductCard(product) {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="product_img">
+        <img src="${product.img.startsWith('http') ? product.img : 'https:' + product.img}" alt="Product Image">
+      </div>
+      <div class="category">Phones</div>
+      <div class="info">
+        <p>${product.name}</p>
+      </div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site">ShopClues / SnapDeal</p></div>
+        <div class="rupee">₹<span class="price">${product.price.replace(/\D/g, '')}</span></div>
+      </div>
+      <button id="onsite">Visit site <img src="/static/images/svg/link.svg" alt=""></button>
+    `;
+
+    document.getElementById("prod_cards").appendChild(card);}
+
+
+
 </script>
+
 </body>
 
 </html>
