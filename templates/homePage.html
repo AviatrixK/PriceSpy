@@ -28,12 +28,12 @@
       <img width="35px" src="{{ url_for('static', filename='images/svg/person.svg')}}">
       <input type="email" id="email" placeholder="Email" required>
     </div>
-    <button disabled id="send_otp" onclick="sendOTP()" class="disabled">Send OTP</button>
+    <button disabled id="send_otp" class="disabled">Send OTP</button>
     <div class="otp">
       <img width="35px" src="{{ url_for('static', filename='images/svg/lock.svg')}}">
       <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
     </div>
-    <button disabled id="verify" onclick="verifyOTP()" class="disabled">Verify <img src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
+    <button disabled id="verify" class="disabled">Verify <img src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
     <p id="auth_message"></p>
   </div>
   <div class="ovrly_s hide"></div>
@@ -139,49 +139,6 @@
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="{{ url_for('static', filename='landing.js') }}"></script>
-  <script>
-    function sendOTP() {
-        let email = document.getElementById("email").value;
-
-        fetch("/send-otp", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email })
-        })
-        .then(response => {
-            if (response.ok) {
-                document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
-                document.getElementById("verify-otp").style.display = "block";
-            } else {
-                document.getElementById("otp-message").innerText = "Failed to send OTP.";
-            }
-        })
-        .catch(error => console.log(error));
-    }
-
-    function verifyOTP() {
-        let email = document.getElementById("email").value;
-        let otp = document.getElementById("otp").value;
-
-        fetch("/verify-otp", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: email, otp: otp })
-        })
-        .then(response => {
-            if (response.status === 200) {
-                document.getElementById("auth_message").innerText = "OTP Verified Successfully!";
-            } else if (response.status === 401) {
-                document.getElementById("auth_message").innerText = "Invalid OTP. Try again.";
-            } else if (response.status === 410) {
-                document.getElementById("auth_message").innerText = "OTP Expired. Request a new one.";
-            } else {
-                document.getElementById("auth_message").innerText = "Error verifying OTP.";
-            }
-        })
-        .catch(error => console.log(error));
-    }
-</script>
 </body>
 
 

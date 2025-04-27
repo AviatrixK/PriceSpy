@@ -23,20 +23,20 @@
   <div class="sign-in-card hide">
     <h1 class="blue">Welcome,</h1>
     <h2>sign in to continue</h2>
-    <button id="google_auth"><img width="70px" src="../frontend/assets/img/Google.svg" alt="Google"> Continue with google</button>
+    <button id="google_auth"><img width="70px" src="{{ url_for('static', filename='images/img/Google.svg')}}" alt="Google"> Continue with google</button>
     <center><span>OR</span></center>
     <div class="emlid">
-      <img width="35px" src="../frontend/assets/svg/person.svg">
+      <img width="35px" src="{{ url_for('static', filename='images/svg/person.svg')}}">
       <input type="email" id="email" placeholder="Email" required>
     </div>
-    <button disabled id="send_otp" onclick="sendOTP()" class="disabled">Send OTP</button>
+    <button disabled id="send_otp" class="disabled">Send OTP</button>
     <p id="otp-message"></p>
 
     <div class="otp">
-      <img width="35px" src="../frontend/assets/svg/lock.svg">
+      <img width="35px" src="{{ url_for('static', filename='images/svg/lock.svg')}}">
       <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
     </div>
-    <button disabled id="verify" onclick="verifyOTP()" class="disabled">Verify <img src="../frontend/assets/svg/Arrow_Fwd.svg"></button>
+    <button disabled id="verify" class="disabled">Verify <img src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
     <p id="auth_message"></p>
   </div>
   <div class="ovrly_s hide"></div>
@@ -52,14 +52,14 @@
       <input type="text" autocomplete="off" autocorrect="off" aria-autocomplete="list"
         placeholder="Search anything in your mind..." />
       <button id="search">
-        <img src="../frontend/assets/svg/search.svg" alt="Search" />
+        <img src="{{ url_for('static', filename='images/svg/search.svg')}}" alt="Search" />
       </button>
     </section>
 
     <section id="head">
       <div class="left">
         <h1>Deals for you</h1>
-        <img src="../frontend/assets/svg/Sparkles.svg" />
+        <img src="{{ url_for('static', filename='images/svg/Sparkles.svg')}}" />
       </div>
       <div class="right">
         <select name="fltr" id="fltr">
@@ -70,7 +70,7 @@
           <option value="#">Accesories</option>
         </select>
         <button title="Reload Button">
-          <img width="40px" src="../frontend/assets/svg/Reload.svg" alt="Reload Button" />
+          <img width="40px" src="{{ url_for('static', filename='images/svg/Reload.svg')}}" alt="Reload Button" />
         </button>
       </div>
     </section>
@@ -93,7 +93,7 @@
         </div>
         <div class="rupee">₹<span class="price">18,63,256</span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -104,7 +104,7 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -115,7 +115,7 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -126,7 +126,7 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -137,7 +137,7 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -148,7 +148,7 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
     </div> 
   </section>
   <script src="{{ url_for('static', filename='main.js') }}"></script>
