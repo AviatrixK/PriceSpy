@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Authentication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>OTP Authentication</h2>
+
+        <!-- OTP Request Form -->
+        <div id="request-otp">
+            <h3>Request OTP</h3>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button onclick="sendOTP()">Send OTP</button>
+            <p id="otp-message"></p>
+        </div>
+
+        <!-- OTP Verification Form -->
+        <div id="verify-otp" style="display: none;">
+            <h3>Verify OTP</h3>
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button onclick="verifyOTP()">Verify OTP</button>
+            <p id="verify-message"></p>
+        </div>
+    </div>
+
+    <script>
+        function sendOTP() {
+            let email = document.getElementById("email").value;
+
+            fetch("/send-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
+                    document.getElementById("verify-otp").style.display = "block";
+                } else {
+                    document.getElementById("otp-message").innerText = "Failed to send OTP.";
+                }
+            })
+            .catch(error => console.log(error));
+        }
+
+        function verifyOTP() {
+            let email = document.getElementById("email").value;
+            let otp = document.getElementById("otp").value;
+
+            fetch("/verify-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: email, otp: otp })
+            })
+            .then(response => {
+                if (response.status === 200) {
+                    document.getElementById("verify-message").innerText = "OTP Verified Successfully!";
+                } else if (response.status === 401) {
+                    document.getElementById("verify-message").innerText = "Invalid OTP. Try again.";
+                } else if (response.status === 410) {
+                    document.getElementById("verify-message").innerText = "OTP Expired. Request a new one.";
+                } else {
+                    document.getElementById("verify-message").innerText = "Error verifying OTP.";
+                }
+            })
+            .catch(error => console.log(error));
+        }
+    </script>
+
+</body>
+</html>
