@@ -235,5 +235,5 @@ def mainWebScraping(name):
 
 # Call the function to start scraping
 
-mainWebScraping('saree')
+# mainWebScraping('saree')
 
