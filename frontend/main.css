@@ -291,7 +291,7 @@ main {
 .bg-blend {
   position: absolute;
   inset: 0;
-  background-image: url(/frontend/assets/bg_img/Nav_bg.png);
+  background-image: url(../frontend/assets/bg_img/Nav_bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   mix-blend-mode: color;
@@ -375,7 +375,7 @@ main {
 }
 
 #prod_cards {
-  background-image: url(/frontend/assets/bg_img/Star_3.png);
+  background-image: url(../frontend/assets/bg_img/Star_3.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -431,5 +431,14 @@ main {
 }
 
 .info{
+  width: 100%;
+  height: 16%;
   font-weight: 500;
+  overflow: hidden;
+}
+
+.prc_info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
