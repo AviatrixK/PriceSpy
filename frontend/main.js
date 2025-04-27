@@ -80,3 +80,8 @@ verify.addEventListener('click', function () {
     })
     .catch(error => console.log(error));
 });
+
+
+document.getElementById("onsite").addEventListener('click', function () {
+  window.location.href = 'https://www.carwale.com/mahindra-cars/be-6/';
+})
