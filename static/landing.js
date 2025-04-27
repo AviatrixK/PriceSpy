@@ -84,6 +84,8 @@ verify.addEventListener('click', function () {
     .then(response => {
       if (response.status === 200) {
         auth_message.innerText = "OTP Verified Successfully!";
+        sign_in_card.classList.add('hide');
+        ovrly_s.classList.add('hide');
       } else if (response.status === 401) {
         auth_message.innerText = "Invalid OTP. Try again.";
       } else if (response.status === 410) {
