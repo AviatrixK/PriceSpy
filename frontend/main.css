@@ -431,14 +431,56 @@ main {
 }
 
 .info{
+  display: flex;
+  align-items: center;
+  font-size: larger;
   width: 100%;
   height: 16%;
   font-weight: 500;
-  overflow: hidden;
 }
 
 .prc_info{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.best_p{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-weight: 600;
+  font-size: 24px;
+}
+.best_site{
+  font-size: 16px;
+}
+
+.rupee{
+  font-size: 22px;
+}
+
+.price{
+  font-size: 22px;
+}
+
+#onsite{
+  font-family: "Geologica", sans-serif;
+  margin: auto;
+  background-color: var(--primary-color);
+  display: flex;
+  height: 8%;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  font-size: large;
+  font-weight: 600;
+  gap: 5px;
+  cursor: pointer;
+}
+
+#onsite:active{
+  background-color: #0291c0;
 }
