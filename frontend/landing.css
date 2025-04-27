@@ -266,7 +266,7 @@ nav ul li {
 
 #hero {
   padding: 0 clamp(20px, 5vw, 50px);
-  background-image: url(/frontend/assets/bg_img/Hero1.png);
+  background-image: url(../frontend/assets/bg_img/Hero1.png);
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -496,7 +496,7 @@ nav ul li {
 }
 
 #stm {
-  background-image: url(/frontend/assets/bg_img/Polygon.png);
+  background-image: url(../frontend/assets/bg_img/Polygon.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right 0;
@@ -603,7 +603,7 @@ nav ul li {
 }
 
 footer {
-  background-image: url(/frontend/assets/bg_img/FooterBg.png);
+  background-image: url(../frontend/assets/bg_img/FooterBg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
