@@ -200,9 +200,12 @@ def mainWebScraping(name):
     urls = {}
     urls['shopClues'] = (f'https://www.shopclues.com/search?q={name}')
     urls['snapDeal'] = (f'https://www.snapdeal.com/search?clickSrc=top_searches&keyword={name}&sort=rlvncy')
-    urls['flipKart'] = (f'https://www.flipkart.com/search?q={name}')
+    # urls['flipKart'] = (f'https://www.flipkart.com/search?q={name}')
     # print(urls)
     falsify = False
+    final_data = {}   # to store all p_data
+    status = False
+    msg = ""
     for url in urls:
         print(url)
         content = fetch_url(urls[url])
@@ -216,7 +219,8 @@ def mainWebScraping(name):
                 p_data = extractShopclues(soup)
             elif url == "flipKart":
                 p_data = extractFlipkart(soup)
-
+            
+            final_data[url] = p_data
             # Create a new .html file and write the parsed content
             with open(f'{file_name}', 'w', encoding='utf-8') as file:
                 file.write(soup.prettify())  # You can use .prettify() for formatted HTML
@@ -224,14 +228,25 @@ def mainWebScraping(name):
             # writefile(snapDeal,"product_data1")
             # return(f"HTML content successfully saved as '{file_name}'")
             falsify = True
+            status = True
         else:
             # print("Failed to retrieve the page after several attempts.")
             falsify = False
+            status = False
             continue
-    if falsify :
-        return(f"HTML content successfully saved as '{file_name}'")
+    if status:
+        msg = "Scraping completed successfully."
     else:
-        return("Failed to retrieve the page after several attempts.")
+        msg = "Failed to retrieve the page after several attempts."
+
+    # create final response
+    response = {
+        "status": status,
+        "msg": msg,
+        "data": final_data
+    }
+
+    return response
 
 # Call the function to start scraping
 
