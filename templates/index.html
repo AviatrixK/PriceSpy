@@ -23,7 +23,8 @@
   <div class="sign-in-card hide">
     <h1 class="blue">Welcome,</h1>
     <h2>sign in to continue</h2>
-    <button id="google_auth"><img width="70px" src="{{ url_for('static', filename='images/img/Google.svg')}}" alt="Google"> Continue with google</button>
+    <button id="google_auth"><img width="70px" src="{{ url_for('static', filename='images/img/Google.svg')}}"
+        alt="Google"> Continue with google</button>
     <center><span>OR</span></center>
     <div class="emlid">
       <img width="35px" src="{{ url_for('static', filename='images/svg/person.svg')}}">
@@ -36,7 +37,8 @@
       <img width="35px" src="{{ url_for('static', filename='images/svg/lock.svg')}}">
       <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
     </div>
-    <button disabled id="verify" class="disabled">Verify <img src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
+    <button disabled id="verify" class="disabled">Verify <img
+        src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
     <p id="auth_message"></p>
   </div>
   <div class="ovrly_s hide"></div>
@@ -49,26 +51,30 @@
         <option value="#">A</option>
         <option value="#">A</option>
       </select>
-      <input type="text" id = "searchFeild" class = "searchFeild" autocomplete="off" autocorrect="off" aria-autocomplete="list"
-        placeholder="Search anything in your mind..." />
+      <input type="text" id="searchField" class="searchField" autocomplete="off" autocorrect="off"
+        aria-autocomplete="list" placeholder="Search anything in your mind..." />
       <button id="search" onclick="searchTerm()">
-        <img src="{{ url_for('static', filename='images/svg/search.svg')}}" alt="Search" />
+        <img id="srchimg" src="{{ url_for('static', filename='images/svg/search.svg')}}" alt="Search" />
       </button>
     </section>
 
     <section id="head">
       <div class="left">
         <h1>Deals for you</h1>
-        <img src="{{ url_for('static', filename='images/svg/Sparkles.svg')}}" />
+        <img width="90vw" src="{{ url_for('static', filename='images/svg/Sparkles.svg')}}" />
       </div>
       <div class="right">
-        <select name="fltr" id="fltr">
-          <option value="#">All</option>
-          <option value="#">Electronincs</option>
-          <option value="#">Home appliances</option>
-          <option value="#">Funiture</option>
-          <option value="#">Accesories</option>
-        </select>
+        <div class="drop-down">
+          <img class="drp" src="{{ url_for('static', filename='images/svg/drop_dwn.svg')}}"> <span
+            class="catxt">All</span>
+        </div>
+        <ul class="drp_list">
+          <li>All</li>
+          <li>Electronics</li>
+          <li>Home Appliances</li>
+          <li>Grooming</li>
+          <li>Furniture</li>
+        </ul>
         <button title="Reload Button">
           <img width="40px" src="{{ url_for('static', filename='images/svg/Reload.svg')}}" alt="Reload Button" />
         </button>
@@ -94,7 +100,8 @@
         </div>
         <div class="rupee">₹<span class="price">18,63,256</span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -105,7 +112,8 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -116,7 +124,8 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -127,7 +136,8 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -138,7 +148,8 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
     </div>
     <div class="card">
       <div class="product_img"></div>
@@ -149,71 +160,82 @@
         </div>
         <div class="rupee">₹<span class="price"></span></div>
       </div>
-      <button id="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}" alt=""></button>
-    </div> 
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
   </section>
   <script src="{{ url_for('static', filename='main.js') }}"></script>
   <script>
     function searchTerm() {
-        let searchQ = document.getElementById("searchFeild").value;
+      let searchQ = document.getElementById("searchField").value;
 
-    //     fetch("/amzn?searchQuery="+searchQ, {
-    //         method: "GET",
-    //         headers: { "Content-Type": "application/json" },
-    //         // body: JSON.stringify({ searchQuery : searchQ })
-    //     })
-    //     .then(response => {
-    //         // if (response.ok) {
-    //         //     document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
-    //         //     document.getElementById("verify-otp").style.display = "block";
-    //         // } else {
-    //         //     document.getElementById("otp-message").innerText = "Failed to send OTP.";
-    //         // }
-    //         console.log("Response")
-    //         console.log(response)
-    //     })
-    //     .catch(error => console.log(error));
-    // }
-    fetch("/amzn?searchQuery=" + searchQ, {
-    method: "GET",
-    headers: { "Content-Type": "application/json" }
-})
-.then(response => response.json())
-.then(result => {
-    console.log("Full parsed result:", result);
+      //     fetch("/amzn?searchQuery="+searchQ, {
+      //         method: "GET",
+      //         headers: { "Content-Type": "application/json" },
+      //         // body: JSON.stringify({ searchQuery : searchQ })
+      //     })
+      //     .then(response => {
+      //         // if (response.ok) {
+      //         //     document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
+      //         //     document.getElementById("verify-otp").style.display = "block";
+      //         // } else {
+      //         //     document.getElementById("otp-message").innerText = "Failed to send OTP.";
+      //         // }
+      //         console.log("Response")
+      //         console.log(response)
+      //     })
+      //     .catch(error => console.log(error));
+      // }
+      fetch("/amzn?searchQuery=" + searchQ, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log("Full parsed result:", result);
 
-    const shopCluesData = JSON.parse(result.data.shopClues); // <-- important: parse it
-    const snapDealData = JSON.parse(result.data.snapDeal);   // <-- important: parse it
+          const shopCluesData = JSON.parse(result.data.shopClues); // <-- important: parse it
+          const snapDealData = JSON.parse(result.data.snapDeal);   // <-- important: parse it
 
-    console.log("shopClues products:", shopCluesData);
-    console.log("snapDeal products:", snapDealData);
-    document.getElementById("prod_cards").innerHTML = "";
+          console.log("shopClues products:", shopCluesData);
+          console.log("snapDeal products:", snapDealData);
+          document.getElementById("prod_cards").innerHTML = "";
 
-    // Now you can loop and create cards for each product
-    shopCluesData.forEach(product => {
-        createProductCard(product);
+          // Now you can loop and create cards for each product
+          shopCluesData.forEach(product => {
+            createProductCard(product);
+          });
+
+          snapDealData.forEach(product => {
+            createProductCard(product);
+          });
+
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+        });
+    }
+
+    const searchField = document.querySelector('#searchField');
+    searchField.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        searchTerm();
+      }
     });
 
-    snapDealData.forEach(product => {
-        createProductCard(product);
-    });
+    function createProductCard(product) {
+      const card = document.createElement("div");
+      card.className = "card";
+      const inputText = searchField.value.trim();
+      const catg_temp = inputText.split(' ')[0];
 
-})
-.catch(error => {
-    console.error("Error fetching data:", error);
-});
-
-}
-
-function createProductCard(product) {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
+      card.innerHTML = `
       <div class="product_img">
         <img src="${product.img.startsWith('http') ? product.img : 'https:' + product.img}" alt="Product Image">
       </div>
-      <div class="category">Phones</div>
+      <div class="category">
+        ${catg_temp}
+        </div>
       <div class="info">
         <p>${product.name}</p>
       </div>
@@ -221,14 +243,14 @@ function createProductCard(product) {
         <div class="best_p">Best Price <p class="best_site">ShopClues / SnapDeal</p></div>
         <div class="rupee">₹<span class="price">${product.price.replace(/\D/g, '')}</span></div>
       </div>
-      <button id="onsite">Visit site <img src="/static/images/svg/link.svg" alt=""></button>
+      <button class="onsite">Visit site <img src="/static/images/svg/link.svg" alt=""></button>
     `;
 
-    document.getElementById("prod_cards").appendChild(card);}
+      document.getElementById("prod_cards").appendChild(card);
+    }
 
 
-
-</script>
+  </script>
 
 </body>
 
