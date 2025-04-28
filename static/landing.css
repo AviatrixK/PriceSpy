@@ -378,7 +378,7 @@ nav ul li {
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.158);
   backdrop-filter: blur(15px);
-  height: 472px;
+  height: 472px; 
   width: 372px;
   border-radius: 30px;
   position: relative;
