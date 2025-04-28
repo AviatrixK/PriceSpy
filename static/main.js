@@ -98,35 +98,30 @@ visit[1].addEventListener('click', function(){
   window.location.href = "https://www.youtube.com";
 });
 
-const arrow_dwn = document.querySelector('.drp');
-const drop_down = document.querySelector('.drop-down');
-const drp_list = document.querySelector('.drp_list')
-const list_items = document.querySelectorAll('.drp_list li');
-const ctxt = document.querySelector('.catxt')
-const reload = document.querySelector('#reload_bttn');
+// const arrow_dwn = document.querySelector('.drp');
+// const drop_down = document.querySelector('.drop-down');
+// const drp_list = document.querySelector('.drp_list')
+// const list_items = document.querySelectorAll('.drp_list li');
+// const ctxt = document.querySelector('.catxt')
 
-reload.addEventListener('click',function(){
-  reload.classList.add('reloadts');
-});
+// drop_down.addEventListener('click', function(e) {
+//   e.stopPropagation();
+//   arrow_dwn.classList.toggle('rotate');
+//   drp_list.classList.toggle('show')
+// });
 
-drop_down.addEventListener('click', function(e) {
-  e.stopPropagation();
-  arrow_dwn.classList.toggle('rotate');
-  drp_list.classList.toggle('show')
-});
+// document.addEventListener('click', function(){
+//   arrow_dwn.classList.remove('rotate');
+//   drp_list.classList.remove('show')
+// });
 
-document.addEventListener('click', function(){
-  arrow_dwn.classList.remove('rotate');
-  drp_list.classList.remove('show')
-});
-
-list_items.forEach(function(item) {
-  item.addEventListener('click', function() {
-    ctxt.innerText = item.textContent;
-    if (item.textContent.length > 5) {
-      ctxt.style.fontSize = '1rem'
-    } else {
-      ctxt.style.fontSize = '1.4rem'
-    }
-  });
-});
+// list_items.forEach(function(item) {
+//   item.addEventListener('click', function() {
+//     ctxt.innerText = item.textContent;
+//     if (item.textContent.length > 5) {
+//       ctxt.style.fontSize = '1rem'
+//     } else {
+//       ctxt.style.fontSize = '1.4rem'
+//     }
+//   });
+// });
