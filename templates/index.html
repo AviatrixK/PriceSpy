@@ -75,7 +75,7 @@
           <li>Grooming</li>
           <li>Furniture</li>
         </ul>
-        <button title="Reload Button">
+        <button id="reload_bttn" title="Reload Button">
           <img width="40px" src="{{ url_for('static', filename='images/svg/Reload.svg')}}" alt="Reload Button" />
         </button>
       </div>
@@ -164,7 +164,7 @@
           alt=""></button>
     </div>
   </section>
-  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
   <script>
     function searchTerm() {
       let searchQ = document.getElementById("searchField").value;
@@ -248,7 +248,16 @@
 
       document.getElementById("prod_cards").appendChild(card);
     }
+    const reload = document.querySelector('#reload_bttn');
 
+    reload.addEventListener('click', function () {
+      reload.classList.add('reloadts');
+
+      reload.addEventListener('animationend', function handler() {
+        reload.classList.remove('reloadts');
+        reload.removeEventListener('animationend', handler); // Clean up
+      });
+    });
 
   </script>
 

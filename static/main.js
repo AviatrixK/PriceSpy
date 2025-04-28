@@ -82,12 +82,12 @@ verify.addEventListener('click', function () {
 });
 
 
-const searchFeild = document.querySelector('#searchFeild');
-searchFeild.addEventListener('keydown', function(e){
-  if(e.key === 'Enter'){
-    searchTerm();
-  } 
-});
+// let searchField = document.querySelector('#searchField');
+// searchField.addEventListener('keydown', function(e){
+//   if(e.key === 'Enter'){
+//     searchTerm();
+//   } 
+// });
 
 const visit = document.querySelectorAll('.onsite');
 
@@ -103,6 +103,12 @@ const drop_down = document.querySelector('.drop-down');
 const drp_list = document.querySelector('.drp_list')
 const list_items = document.querySelectorAll('.drp_list li');
 const ctxt = document.querySelector('.catxt')
+const reload = document.querySelector('#reload_bttn');
+
+reload.addEventListener('click',function(){
+  reload.classList.add('reloadts');
+});
+
 drop_down.addEventListener('click', function(e) {
   e.stopPropagation();
   arrow_dwn.classList.toggle('rotate');
