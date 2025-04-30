@@ -76,7 +76,7 @@ ul li {
   border-bottom: 2px solid var(--primary-color);
 }
 
-#sign-in {
+/* #sign-in {
   border: none;
   border-radius: 7px;
   outline: none;
@@ -282,7 +282,7 @@ ul li {
     text-align: center;
     color: var(--white-color);
   }
-}
+} */
 
 main {
   padding-top: 150px;
