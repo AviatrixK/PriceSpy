@@ -62,6 +62,44 @@
 📫 Email: mayank.r2409@gmail.com
 
 ---
+Steps to Run PriceSpy:
+
+1. Clone the Repository:
+   Command:
+   git clone https://github.com/AviatrixK/PriceSpy.git
+   cd PriceSpy
+
+2. Create and Activate a Virtual Environment
+   Command:
+   python -m venv venv
+
+   Activate it:
+
+   On Windows:
+   venv\Scripts\activate
+
+   On Linux/macOS:
+   source venv/bin/activate
+
+3. Install Required Dependencies
+   Command:
+   pip install -r requirement.txt
+
+4. Set Flask Environment Variables
+   On Windows (Command Prompt):
+   set FLASK_APP=app.py
+   set FLASK_ENV=development
+
+   On Linux/macOS:
+   export FLASK_APP=app.py
+   export FLASK_ENV=development
+
+5. Run the Flask App
+   Command:
+   flask run
+
+**You can access the app at http://127.0.0.1:5000**
+
 
 
 
