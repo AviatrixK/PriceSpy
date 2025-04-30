@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <title>PriceSpy - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li id="logo"><a href="index.html">Price Spy</a></li>
+      <li id="hm"><a class="active" href="index.html">Home</a></li>
+      <li id="cnt"><a href="#">Contact Us</a></li>
+      <li id="abt"><a href="#">About Us</a></li>
+      <li><button id="sign-in">Sign in</button></li>
+    </ul>
+  </nav>
+  <div class="sign-in-card hide">
+    <h1 class="blue">Welcome,</h1>
+    <h2>sign in to continue</h2>
+    <button id="google_auth"><img width="70px" src="{{ url_for('static', filename='images/img/Google.svg')}}"
+        alt="Google"> Continue with google</button>
+    <center><span>OR</span></center>
+    <div class="emlid">
+      <img width="35px" src="{{ url_for('static', filename='images/svg/person.svg')}}">
+      <input type="email" id="email" placeholder="Email" required>
+    </div>
+    <button disabled id="send_otp" class="disabled">Send OTP</button>
+    <p id="otp-message"></p>
+
+    <div class="otp">
+      <img width="35px" src="{{ url_for('static', filename='images/svg/lock.svg')}}">
+      <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
+    </div>
+    <button disabled id="verify" class="disabled">Verify <img
+        src="{{ url_for('static', filename='images/svg/Arrow_Fwd.svg')}}"></button>
+    <p id="auth_message"></p>
+  </div>
+  <div class="ovrly_s hide"></div>
+  <main>
+    <div class="bg-blend"></div>
+    <section id="search-section">
+      <select name="category" id="filter">
+        <option value="#">All</option>
+        <option value="#">Abcdefghik</option>
+        <option value="#">A</option>
+        <option value="#">A</option>
+      </select>
+      <input type="text" id="searchField" class="searchField" autocomplete="off" autocorrect="off"
+        aria-autocomplete="list" placeholder="Search anything in your mind..." />
+      <button id="search" onclick="searchTerm()">
+        <img id="srchimg" src="{{ url_for('static', filename='images/svg/search.svg')}}" alt="Search" />
+      </button>
+    </section>
+
+    <section id="head">
+      <div class="left">
+        <h1>Deals for you</h1>
+        <img width="90vw" src="{{ url_for('static', filename='images/svg/Sparkles.svg')}}" />
+      </div>
+      <div class="right">
+        <div class="drop-down">
+          <img class="drp" src="{{ url_for('static', filename='images/svg/drop_dwn.svg')}}"> <span
+            class="catxt">All</span>
+        </div>
+        <ul class="drp_list">
+          <li>All</li>
+          <li>Electronics</li>
+          <li>Home Appliances</li>
+          <li>Grooming</li>
+          <li>Furniture</li>
+        </ul>
+        <button id="reload_bttn" title="Reload Button">
+          <img width="40px" src="{{ url_for('static', filename='images/svg/Reload.svg')}}" alt="Reload Button" />
+        </button>
+      </div>
+    </section>
+  </main>
+  <!-- <div id="products"></div> -->
+  <section id="prod_cards">
+    <div class="card">
+      <div class="product_img">
+        <img
+          src="https://imgd.aeplcdn.com/600x337/n/cw/ec/131825/be-6e-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80"
+          alt="Gaddi">
+      </div>
+      <div class="category">
+        Cars
+      </div>
+      <div class="info">
+        <p>Mahindra BE 6E</p>
+      </div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site">Amazon</p>
+        </div>
+        <div class="rupee">₹<span class="price">18,63,256</span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button class="onsite">Visit site <img src="{{ url_for('static', filename='images/svg/link.svg')}}"
+          alt=""></button>
+    </div>
+  </section>
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  <script>
+    function searchTerm() {
+      let searchQ = document.getElementById("searchField").value;
+
+      //     fetch("/amzn?searchQuery="+searchQ, {
+      //         method: "GET",
+      //         headers: { "Content-Type": "application/json" },
+      //         // body: JSON.stringify({ searchQuery : searchQ })
+      //     })
+      //     .then(response => {
+      //         // if (response.ok) {
+      //         //     document.getElementById("otp-message").innerText = "OTP sent! Check your email.";
+      //         //     document.getElementById("verify-otp").style.display = "block";
+      //         // } else {
+      //         //     document.getElementById("otp-message").innerText = "Failed to send OTP.";
+      //         // }
+      //         console.log("Response")
+      //         console.log(response)
+      //     })
+      //     .catch(error => console.log(error));
+      // }
+      fetch("/amzn?searchQuery=" + searchQ, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log("Full parsed result:", result);
+
+          const shopCluesData = JSON.parse(result.data.shopClues); // <-- important: parse it
+          const snapDealData = JSON.parse(result.data.snapDeal);   // <-- important: parse it
+
+          console.log("shopClues products:", shopCluesData);
+          console.log("snapDeal products:", snapDealData);
+          document.getElementById("prod_cards").innerHTML = "";
+
+          // Now you can loop and create cards for each product
+          shopCluesData.forEach(product => {
+            createProductCard(product);
+          });
+
+          snapDealData.forEach(product => {
+            createProductCard(product);
+          });
+
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+        });
+    }
+
+    const searchField = document.querySelector('#searchField');
+    searchField.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        searchTerm();
+      }
+    });
+
+    function createProductCard(product) {
+      const card = document.createElement("div");
+      card.className = "card";
+      const inputText = searchField.value.trim();
+      const catg_temp = inputText.split(' ')[0];
+
+      card.innerHTML = `
+      <div class="product_img">
+        <img src="${product.img.startsWith('http') ? product.img : 'https:' + product.img}" alt="Product Image">
+      </div>
+      <div class="category">
+        ${catg_temp}
+        </div>
+      <div class="info">
+        <p>${product.name}</p>
+      </div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site">ShopClues / SnapDeal</p></div>
+        <div class="rupee">₹<span class="price">${product.price.replace(/\D/g, '')}</span></div>
+      </div>
+      <button class="onsite">Visit site <img src="/static/images/svg/link.svg" alt=""></button>
+    `;
+
+      document.getElementById("prod_cards").appendChild(card);
+    }
+    const reload = document.querySelector('#reload_bttn');
+
+    reload.addEventListener('click', function () {
+      reload.classList.add('reloadts');
+
+      reload.addEventListener('animationend', function handler() {
+        reload.classList.remove('reloadts');
+        reload.removeEventListener('animationend', handler); // Clean up
+      });
+    });
+const arrow_dwn = document.querySelector('.drp');
+const drop_down = document.querySelector('.drop-down');
+const drp_list = document.querySelector('.drp_list')
+const list_items = document.querySelectorAll('.drp_list li');
+const ctxt = document.querySelector('.catxt')
+
+drop_down.addEventListener('click', function(e) {
+  e.stopPropagation();
+  arrow_dwn.classList.toggle('rotate');
+  drp_list.classList.toggle('show')
+});
+
+document.addEventListener('click', function(){
+  arrow_dwn.classList.remove('rotate');
+  drp_list.classList.remove('show')
+});
+
+list_items.forEach(function(item) {
+  item.addEventListener('click', function() {
+    ctxt.innerText = item.textContent;
+    if (item.textContent.length > 5) {
+      ctxt.style.fontSize = '1rem'
+    } else {
+      ctxt.style.fontSize = '1.4rem'
+    }
+  });
+});
+  </script>
+
+</body>
+
+</html>

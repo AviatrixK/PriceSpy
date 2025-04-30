@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <title>PriceSpy - Home</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li id="logo"><a href="index.html">Price Spy</a></li>
+      <li id="hm"><a class="active" href="index.html">Home</a></li>
+      <li id="cnt"><a href="#">Contact Us</a></li>
+      <li id="abt"><a href="#">About Us</a></li>
+      <li><button id="sign-in">Sign in</button></li>
+    </ul>
+  </nav>
+  <div class="sign-in-card hide">
+    <h1 class="blue">Welcome,</h1>
+    <h2>sign in to continue</h2>
+    <button id="google_auth"><img width="70px" src="../frontend/assets/img/Google.svg" alt="Google"> Continue with
+      google</button>
+    <center><span>OR</span></center>
+    <div class="emlid">
+      <img width="35px" src="../frontend/assets/svg/person.svg">
+      <input type="email" id="email" placeholder="Email" required>
+    </div>
+    <button disabled id="send_otp" class="disabled">Send OTP</button>
+    <div class="otp">
+      <img width="35px" src="../frontend/assets/svg/lock.svg">
+      <input type="text" id="otp" placeholder="Enter OTP" maxlength="6" required>
+    </div>
+    <button disabled id="verify" class="disabled">Verify <img src="../frontend/assets/svg/Arrow_Fwd.svg"></button>
+    <p id="auth_message"></p>
+  </div>
+  <div class="ovrly_s hide"></div>
+  <main>
+    <div class="bg-blend"></div>
+    <section id="search-section">
+      <select name="category" id="filter">
+        <option value="#">All</option>
+        <option value="#">Abcdefghik</option>
+        <option value="#">A</option>
+        <option value="#">A</option>
+      </select>
+      <input type="text" autocomplete="off" autocorrect="off" aria-autocomplete="list"
+        placeholder="Search anything in your mind..." />
+      <button id="search">
+        <img src="../frontend/assets/svg/search.svg" alt="Search" />
+      </button>
+    </section>
+
+    <section id="head">
+      <div class="left">
+        <h1>Deals for you</h1>
+        <img src="../frontend/assets/svg/Sparkles.svg" />
+      </div>
+      <div class="right">
+        <select name="fltr" id="fltr">
+          <option value="#">All</option>
+          <option value="#">Electronincs</option>
+          <option value="#">Home appliances</option>
+          <option value="#">Funiture</option>
+          <option value="#">Accesories</option>
+        </select>
+        <button title="Reload Button">
+          <img width="40px" src="../frontend/assets/svg/Reload.svg" alt="Reload Button" />
+        </button>
+      </div>
+    </section>
+  </main>
+  <section id="prod_cards">
+    <div class="card">
+      <div class="product_img">
+        <img
+          src="https://imgd.aeplcdn.com/600x337/n/cw/ec/131825/be-6e-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80"
+          alt="Gaddi">
+      </div>
+      <div class="category">
+        Cars
+      </div>
+      <div class="info">
+        <p>Mahindra BE 6E</p>
+      </div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site">Amazon</p>
+        </div>
+        <div class="rupee">₹<span class="price">18,63,256</span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+    <div class="card">
+      <div class="product_img"></div>
+      <div class="category"></div>
+      <div class="info"></div>
+      <div class="prc_info">
+        <div class="best_p">Best Price <p class="best_site"></p>
+        </div>
+        <div class="rupee">₹<span class="price"></span></div>
+      </div>
+      <button id="onsite">Visit site <img src="../frontend/assets/svg/link.svg" alt=""></button>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+
+</html>
