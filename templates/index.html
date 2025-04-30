@@ -96,7 +96,7 @@
         Cars
       </div>
       <div class="info">
-        <p>Mahindra BE 6E</p>
+        <p class="prod_info">Mahindra BE 6E</p>
       </div>
       <div class="prc_info">
         <div class="best_p">Best Price <p class="best_site">Amazon</p>
@@ -121,7 +121,9 @@
     <div class="card">
       <div class="product_img"></div>
       <div class="category"></div>
-      <div class="info"></div>
+      <div class="info">
+        <p class="prod_info">sffffsc</p>
+      </div>
       <div class="prc_info">
         <div class="best_p">Best Price <p class="best_site"></p>
         </div>
@@ -190,6 +192,8 @@
       //     })
       //     .catch(error => console.log(error));
       // }
+      showSkeletonCards();
+
       fetch("/amzn?searchQuery=" + searchQ, {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -200,7 +204,6 @@
 
           const shopCluesData = JSON.parse(result.data.shopClues); // <-- important: parse it
           const snapDealData = JSON.parse(result.data.snapDeal);   // <-- important: parse it
-
           console.log("shopClues products:", shopCluesData);
           console.log("snapDeal products:", snapDealData);
           document.getElementById("prod_cards").innerHTML = "";
@@ -241,7 +244,7 @@
         ${catg_temp}
         </div>
       <div class="info">
-        <p>${product.name}</p>
+        <p class="prod_info" >${product.name}</p>
       </div>
       <div class="prc_info">
         <div class="best_p">Best Price <p class="best_site">ShopClues / SnapDeal</p></div>
