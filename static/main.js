@@ -82,12 +82,12 @@ verify.addEventListener('click', function () {
 });
 
 
-const searchFeild = document.querySelector('#searchFeild');
-searchFeild.addEventListener('keydown', function(e){
-  if(e.key === 'Enter'){
-    searchTerm();
-  } 
-});
+// let searchField = document.querySelector('#searchField');
+// searchField.addEventListener('keydown', function(e){
+//   if(e.key === 'Enter'){
+//     searchTerm();
+//   } 
+// });
 
 const visit = document.querySelectorAll('.onsite');
 
@@ -98,29 +98,30 @@ visit[1].addEventListener('click', function(){
   window.location.href = "https://www.youtube.com";
 });
 
-const arrow_dwn = document.querySelector('.drp');
-const drop_down = document.querySelector('.drop-down');
-const drp_list = document.querySelector('.drp_list')
-const list_items = document.querySelectorAll('.drp_list li');
-const ctxt = document.querySelector('.catxt')
-drop_down.addEventListener('click', function(e) {
-  e.stopPropagation();
-  arrow_dwn.classList.toggle('rotate');
-  drp_list.classList.toggle('show')
-});
+// const arrow_dwn = document.querySelector('.drp');
+// const drop_down = document.querySelector('.drop-down');
+// const drp_list = document.querySelector('.drp_list')
+// const list_items = document.querySelectorAll('.drp_list li');
+// const ctxt = document.querySelector('.catxt')
 
-document.addEventListener('click', function(){
-  arrow_dwn.classList.remove('rotate');
-  drp_list.classList.remove('show')
-});
+// drop_down.addEventListener('click', function(e) {
+//   e.stopPropagation();
+//   arrow_dwn.classList.toggle('rotate');
+//   drp_list.classList.toggle('show')
+// });
 
-list_items.forEach(function(item) {
-  item.addEventListener('click', function() {
-    ctxt.innerText = item.textContent;
-    if (item.textContent.length > 5) {
-      ctxt.style.fontSize = '1rem'
-    } else {
-      ctxt.style.fontSize = '1.4rem'
-    }
-  });
-});
+// document.addEventListener('click', function(){
+//   arrow_dwn.classList.remove('rotate');
+//   drp_list.classList.remove('show')
+// });
+
+// list_items.forEach(function(item) {
+//   item.addEventListener('click', function() {
+//     ctxt.innerText = item.textContent;
+//     if (item.textContent.length > 5) {
+//       ctxt.style.fontSize = '1rem'
+//     } else {
+//       ctxt.style.fontSize = '1.4rem'
+//     }
+//   });
+// });
