@@ -361,6 +361,7 @@ main {
   justify-content: center;
   gap: 50vw;
   padding: 0 3vw;
+  transition: all 0.3s ease-in-out;
 }
 
 .left {
@@ -369,7 +370,7 @@ main {
   align-items: center;
   font-family: "Geologica", sans-serif;
   font-style: italic;
-  font-size: 2vw;
+  font-size: 1.8vw;
   color: var(--white-color);
 }
 
@@ -410,11 +411,11 @@ main {
   border-radius: 10px;
   padding: 10px;
   box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
-  box-shadow: 5px 4px 0px 5px rgb(0, 0, 0);
+  box-shadow: 5px 4px 0px 5px rgb(141, 110, 255);
 }
 
 .product_img {
@@ -521,16 +522,17 @@ main {
   position: absolute;
   display: none;
   flex-direction: column;
-  gap: 12px;
+  /* gap: 10px; */
   font-family: "Geologica",sans-serif;
   height: 30vh;
   transition: all 0.5s ease-in-out;
   font-size: 1.4vw;
   background-color: var(--white-color);
-  top: 315px;
+  top: 314px;
   overflow: hidden;
   border-radius: 0px 10px 10px 10px;
-  padding: 0 5px;
+  box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+  /* padding: 0 5px; */
 }
 
 .drp_list.show {
@@ -538,10 +540,17 @@ main {
 }
 
 .drp_list li {
-  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center;  
+  /* text-align: center; */
+  padding: 0 6px;
+  height: 50px;
   cursor: pointer;
 }
 
 .drp_list li:hover {
-  background-color: rgb(110, 214, 255);
+  background-color: rgb(141, 110, 255);
+  color: var(--white-color);
 }
