@@ -265,33 +265,39 @@
         reload.removeEventListener('animationend', handler); // Clean up
       });
     });
-const arrow_dwn = document.querySelector('.drp');
-const drop_down = document.querySelector('.drop-down');
-const drp_list = document.querySelector('.drp_list')
-const list_items = document.querySelectorAll('.drp_list li');
-const ctxt = document.querySelector('.catxt')
 
-drop_down.addEventListener('click', function(e) {
-  e.stopPropagation();
-  arrow_dwn.classList.toggle('rotate');
-  drp_list.classList.toggle('show')
-});
+    // const info = card.querySelector('.prod_info');
+    // if (info && info.textContent.length >= 6) {
+    //   info.style.setProperty('font-size', '12px', 'important');
+    // }
 
-document.addEventListener('click', function(){
-  arrow_dwn.classList.remove('rotate');
-  drp_list.classList.remove('show')
-});
+    const arrow_dwn = document.querySelector('.drp');
+    const drop_down = document.querySelector('.drop-down');
+    const drp_list = document.querySelector('.drp_list')
+    const list_items = document.querySelectorAll('.drp_list li');
+    const ctxt = document.querySelector('.catxt')
 
-list_items.forEach(function(item) {
-  item.addEventListener('click', function() {
-    ctxt.innerText = item.textContent;
-    if (item.textContent.length > 5) {
-      ctxt.style.fontSize = '1rem'
-    } else {
-      ctxt.style.fontSize = '1.4rem'
-    }
-  });
-});
+    drop_down.addEventListener('click', function (e) {
+      e.stopPropagation();
+      arrow_dwn.classList.toggle('rotate');
+      drp_list.classList.toggle('show')
+    });
+
+    document.addEventListener('click', function () {
+      arrow_dwn.classList.remove('rotate');
+      drp_list.classList.remove('show')
+    });
+
+    list_items.forEach(function (item) {
+      item.addEventListener('click', function () {
+        ctxt.innerText = item.textContent;
+        if (item.textContent.length > 5) {
+          ctxt.style.fontSize = '1rem'
+        } else {
+          ctxt.style.fontSize = '1.4rem'
+        }
+      });
+    });
   </script>
 
 </body>

@@ -22,11 +22,3 @@ function showSkeletonCards() {
     `;
   }
 }
-
-const infos = document.querySelectorAll('.prod_info');
-
-infos.forEach(info => {
-  if (info.textContent.length > 90) {
-    infos.style.fontSize = 'small';
-  }
-});
