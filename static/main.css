@@ -271,6 +271,10 @@ main {
   cursor: pointer;
 }
 
+.price{
+  font-size: 1.2em;
+}
+
 .onsite:active {
   background-color: #0291c0;
 }
@@ -356,7 +360,8 @@ main {
 
 .skeleton-img,
 .skeleton-title,
-.skeleton-line {
+.skeleton-line,
+.skeleton-button {
   background: #c0c0c0;
   position: relative;
   overflow: hidden;
@@ -371,18 +376,30 @@ main {
 .skeleton-title {
   border-radius: 5px;
   height: 25px;
+  border-radius: 5px;
   width: 20%;
-  margin: 10px 0;
+  margin-bottom: 7px;
 }
 
 .skeleton-line {
   height: 14px;
   width: 100%;
-  margin-bottom: 8px;
+  border-radius: 5px;
+  margin-top: 14px;
 }
 
 .skeleton-line.short {
   width: 50%;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.skeleton-button{
+  height: 30px;
+  width: 35%;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin: auto;
 }
 
 .shimmer::before {
