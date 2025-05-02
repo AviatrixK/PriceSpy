@@ -348,6 +348,7 @@ main {
   max-height: 0;
   overflow: hidden;
   border-radius: 0px 10px 10px 10px;
+  z-index: 3;
 }
 
 .drp_list.show {
