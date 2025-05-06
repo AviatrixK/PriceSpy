@@ -14,6 +14,7 @@ html {
   --bg-color: #0e1a1f;
   --white-color: #ffffff;
   --primary-color: #00c1ff;
+  --secondary-color: #8c44d3;
   --card-color: #bdbdc1;
 }
 
@@ -207,7 +208,7 @@ main {
 }
 
 .card:hover {
-  box-shadow: 5px 4px 0px 5px rgb(141, 110, 255);
+  box-shadow: 5px 4px 0px 5px var(--secondary-color);
 }
 
 .product_img {
@@ -239,11 +240,25 @@ main {
 
 .info {
   display: flex;
-  align-items: center;
+  overflow-y: auto;
   width: 100%;
   height: 16%;
   font-weight: 500;
-  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.info::-webkit-scrollbar {
+  width: 4px;
+}
+
+.info::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+.info::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
 }
 
 
@@ -270,6 +285,10 @@ main {
   cursor: pointer;
 }
 
+.price{
+  font-size: 1.2em;
+}
+
 .onsite:active {
   background-color: #0291c0;
 }
@@ -279,6 +298,7 @@ main {
   width: auto;
   min-width: 80px;
   max-width: 500px;
+  padding: 3px;
   height: 35px;
   background-color: var(--white-color);
   display: flex;
@@ -318,34 +338,32 @@ main {
 .drp_list {
   list-style: none;
   position: absolute;
-  display: none;
-  flex-direction: column;
+  display: grid;
   font-family: "Geologica", sans-serif;
-  height: 30vh;
+  height: 40vh;
   transition: all 0.5s ease-in-out;
-  font-size: 1.4vw;
+  /* font-size: 1.4vw; */
   background-color: var(--white-color);
   top: 314px;
+  max-height: 0;
   overflow: hidden;
   border-radius: 0px 10px 10px 10px;
-  box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+  z-index: 3;
 }
 
 .drp_list.show {
-  display: flex;
+  max-height: 40vh;
+    box-shadow: 5px 4px 0px 2px rgb(0, 0, 0);
+    z-index: 3;
 }
 
 .drp_list li {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 0 6px;
-  height: 50px;
+  padding: 12px 6px;
   cursor: pointer;
 }
 
 .drp_list li:hover {
-  background-color: rgb(141, 110, 255);
+  background-color: var(--secondary-color);
   color: var(--white-color);
 }
 
@@ -358,7 +376,8 @@ main {
 
 .skeleton-img,
 .skeleton-title,
-.skeleton-line {
+.skeleton-line,
+.skeleton-button {
   background: #c0c0c0;
   position: relative;
   overflow: hidden;
@@ -373,18 +392,30 @@ main {
 .skeleton-title {
   border-radius: 5px;
   height: 25px;
+  border-radius: 5px;
   width: 20%;
-  margin: 10px 0;
+  margin-bottom: 7px;
 }
 
 .skeleton-line {
   height: 14px;
   width: 100%;
-  margin-bottom: 8px;
+  border-radius: 5px;
+  margin-top: 14px;
 }
 
 .skeleton-line.short {
   width: 50%;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.skeleton-button{
+  height: 30px;
+  width: 35%;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin: auto;
 }
 
 .shimmer::before {
