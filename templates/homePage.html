@@ -16,8 +16,8 @@
 <body>
   <nav>
     <ul>
-      <li id="logo"><a href="landingPage.html">Price Spy</a></li>
-      <li><button id="sign-in" class = ''>Sign in</button></li>
+      <li id="logo"><a href="/templates/homePage.html">Price Spy</a></li>
+      <li><button id="sign-in" class=''>Sign in</button></li>
       <li class="user hide"><img src="{{ url_for('static' , filename = 'images/img/userIcon.png')}}"></li>
     </ul>
   </nav>
@@ -54,7 +54,12 @@
       </p>
       <div class="start-btn">
         <button class="getstart">
-          Get Started <img id="arrow" src="{{ url_for('static', filename='images/svg/Arrow.svg')}}" />
+          Get Started <svg id="arrow" width="55" height="56" viewBox="0 0 55 56" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="27.7792" cy="28.2477" rx="27.0896" ry="27.498" fill="#00C1FF" />
+            <path d="M30.8857 20.9696L38.6714 28.8726L30.8857 36.7757M16.8663 28.8726L38.4534 28.8726" stroke="white"
+              stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </button>
       </div>
     </div>
@@ -108,19 +113,19 @@
     </h1>
     <div class="sbsn">
       <div class="lst-bx" id="lst-1">
-        <img src="{{ url_for('static', filename='images/img/sand_clk.png')}}" alt="Sand Clock" />
+        <img class="lst-im" src="{{ url_for('static', filename='images/img/sand_clk.png')}}" alt="Sand Clock" />
         <h2 class="lst">Saves your Time</h2>
       </div>
       <div class="lst-bx" id="lst-2">
-        <img src="{{ url_for('static', filename='images/img/Que_spy.png')}}" alt="Question Mark" />
-        <h2 class="lst">Buy Without Doubts</h2>
+        <img class="lst-im" src="{{ url_for('static', filename='images/img/Que_spy.png')}}" alt="Question Mark" />
+        <h2 class="lst">Buy Without Any Doubts</h2>
       </div>
       <div class="lst-bx" id="lst-3">
-        <img src="{{ url_for('static', filename='images/img/money_spy.png')}}" alt="Money" />
+        <img class="lst-im" src="{{ url_for('static', filename='images/img/money_spy.png')}}" alt="Money" />
         <h2 class="lst">Save More Than Others</h2>
       </div>
       <div class="lst-bx" id="lst-4">
-        <img src="{{ url_for('static', filename='images/img/Notify_spy.png')}}" alt="Notification Bell" />
+        <img class="lst-im" src="{{ url_for('static', filename='images/img/Notify_spy.png')}}" alt="Notification Bell" />
         <h2 class="lst">Never Miss Your Favourite Deals</h2>
       </div>
     </div>
@@ -130,7 +135,12 @@
       <center>
         <div class="start-btn">
           <button class="getstart">
-            Get Started <img id="arrow" src="{{ url_for('static', filename='images/svg/Arrow.svg')}}" />
+            Get Started <svg id="arrow" width="55" height="56" viewBox="0 0 55 56" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="27.7792" cy="28.2477" rx="27.0896" ry="27.498" fill="#00C1FF" />
+              <path d="M30.8857 20.9696L38.6714 28.8726L30.8857 36.7757M16.8663 28.8726L38.4534 28.8726" stroke="white"
+                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </button>
         </div>
       </center>

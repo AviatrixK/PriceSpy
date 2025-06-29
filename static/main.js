@@ -19,7 +19,7 @@ visit[5].addEventListener('click', function(){
   window.open ("https://www.snapdeal.com/product/da-tasche-green-polyester-backpack/630519334580", '_blank');
 });
 
-function showSkeletonCards() {
+function showLoader() {
   const container = document.getElementById("prod_cards");
   container.innerHTML = "";
 
